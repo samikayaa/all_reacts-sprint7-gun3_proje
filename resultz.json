@@ -1,0 +1,92 @@
+{
+  "numTotalTestSuites": 1,
+  "numPassedTestSuites": 1,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 5,
+  "numPassedTests": 2,
+  "numFailedTests": 3,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "startTime": 1722088518704,
+  "success": false,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " Sign In butonu disabled olarak başlıyor",
+          "status": "passed",
+          "title": "Sign In butonu disabled olarak başlıyor",
+          "duration": 28,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " Terms seçilir ise buton enabled oluyor",
+          "status": "failed",
+          "title": "Terms seçilir ise buton enabled oluyor",
+          "duration": 13,
+          "failureMessages": [
+            "Unable to find a label with the text of: /I agree to/i\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<header>\u001b[39m\n      \u001b[36m<h1>\u001b[39m\n        \u001b[0mWiStore Products\u001b[0m\n      \u001b[36m</h1>\u001b[39m\n      \u001b[36m<button\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"btn btn-primary\"\u001b[39m\n        \u001b[33mtype\u001b[39m=\u001b[32m\"button\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[0mLogin\u001b[0m\n      \u001b[36m</button>\u001b[39m\n    \u001b[36m</header>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"content-section\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<form\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"mb-3\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<label\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"form-label\"\u001b[39m\n            \u001b[33mfor\u001b[39m=\u001b[32m\"exampleEmail\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[0mEmail\u001b[0m\n          \u001b[36m</label>\u001b[39m\n          \u001b[36m<input\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"form-control\"\u001b[39m\n            \u001b[33mid\u001b[39m=\u001b[32m\"exampleEmail\"\u001b[39m\n            \u001b[33mname\u001b[39m=\u001b[32m\"email\"\u001b[39m\n            \u001b[33mplaceholder\u001b[39m=\u001b[32m\"Enter your email\"\u001b[39m\n            \u001b[33mtype\u001b[39m=\u001b[32m\"email\"\u001b[39m\n            \u001b[33mvalue\u001b[39m=\u001b[32m\"\"\u001b[39m\n          \u001b[36m/>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"mb-3\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<label\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"form-label\"\u001b[39m\n            \u001b[33mfor\u001b[39m=\u001b[32m\"examplePassword\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[0mPassword\u001b[0m\n          \u001b[36m</label>\u001b[39m\n          \u001b[36m<input\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"form-control\"\u001b[39m\n            \u001b[33mid\u001b[39m=\u001b[32m\"examplePassword\"\u001b[39m\n            \u001b[33mname\u001b[39m=\u001b[32m\"password\"\u001b[39m\n            \u001b[33mplaceholder\u001b[39m=\u001b[32m\"Enter your password \"\u001b[39m\n            \u001b[33mtype\u001b[39m=\u001b[32m\"password\"\u001b[39m\n            \u001b[33mvalue\u001b[39m=\u001b[32m\"\"\u001b[39m\n          \u001b[36m/>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"text-center p-4 mb-3\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"btn btn-primary disabled\"\u001b[39m\n            \u001b[33mdisabled\u001b[39m=\u001b[32m\"\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[0mSign In\u001b[0m\n          \u001b[36m</button>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</form>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n    \u001b[36m<footer>\u001b[39m\n      \u001b[36m<p>\u001b[39m\n        \u001b[0mCopyright @ 2023\u001b[0m\n      \u001b[36m</p>\u001b[39m\n    \u001b[36m</footer>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mdata-testid\u001b[39m=\u001b[32m\"location-display\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[0m/\u001b[0m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ],
+          "location": {
+            "line": 37,
+            "column": 19
+          }
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " Terms'ün seçili olma durumu kaldırılır ise buton tekrar disabled oluyor",
+          "status": "failed",
+          "title": "Terms'ün seçili olma durumu kaldırılır ise buton tekrar disabled oluyor",
+          "duration": 6,
+          "failureMessages": [
+            "Unable to find a label with the text of: /I agree to/i\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<header>\u001b[39m\n      \u001b[36m<h1>\u001b[39m\n        \u001b[0mWiStore Products\u001b[0m\n      \u001b[36m</h1>\u001b[39m\n      \u001b[36m<button\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"btn btn-primary\"\u001b[39m\n        \u001b[33mtype\u001b[39m=\u001b[32m\"button\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[0mLogin\u001b[0m\n      \u001b[36m</button>\u001b[39m\n    \u001b[36m</header>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"content-section\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<form\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"mb-3\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<label\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"form-label\"\u001b[39m\n            \u001b[33mfor\u001b[39m=\u001b[32m\"exampleEmail\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[0mEmail\u001b[0m\n          \u001b[36m</label>\u001b[39m\n          \u001b[36m<input\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"form-control\"\u001b[39m\n            \u001b[33mid\u001b[39m=\u001b[32m\"exampleEmail\"\u001b[39m\n            \u001b[33mname\u001b[39m=\u001b[32m\"email\"\u001b[39m\n            \u001b[33mplaceholder\u001b[39m=\u001b[32m\"Enter your email\"\u001b[39m\n            \u001b[33mtype\u001b[39m=\u001b[32m\"email\"\u001b[39m\n            \u001b[33mvalue\u001b[39m=\u001b[32m\"\"\u001b[39m\n          \u001b[36m/>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"mb-3\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<label\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"form-label\"\u001b[39m\n            \u001b[33mfor\u001b[39m=\u001b[32m\"examplePassword\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[0mPassword\u001b[0m\n          \u001b[36m</label>\u001b[39m\n          \u001b[36m<input\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"form-control\"\u001b[39m\n            \u001b[33mid\u001b[39m=\u001b[32m\"examplePassword\"\u001b[39m\n            \u001b[33mname\u001b[39m=\u001b[32m\"password\"\u001b[39m\n            \u001b[33mplaceholder\u001b[39m=\u001b[32m\"Enter your password \"\u001b[39m\n            \u001b[33mtype\u001b[39m=\u001b[32m\"password\"\u001b[39m\n            \u001b[33mvalue\u001b[39m=\u001b[32m\"\"\u001b[39m\n          \u001b[36m/>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"text-center p-4 mb-3\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"btn btn-primary disabled\"\u001b[39m\n            \u001b[33mdisabled\u001b[39m=\u001b[32m\"\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[0mSign In\u001b[0m\n          \u001b[36m</button>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</form>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n    \u001b[36m<footer>\u001b[39m\n      \u001b[36m<p>\u001b[39m\n        \u001b[0mCopyright @ 2023\u001b[0m\n      \u001b[36m</p>\u001b[39m\n    \u001b[36m</footer>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mdata-testid\u001b[39m=\u001b[32m\"location-display\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[0m/\u001b[0m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ],
+          "location": {
+            "line": 37,
+            "column": 19
+          }
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " Terms kabul edilmez ise form submit olmuyor",
+          "status": "passed",
+          "title": "Terms kabul edilmez ise form submit olmuyor",
+          "duration": 639,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " Form doğru bilgiler ile doldurulunca form submit oluyor",
+          "status": "failed",
+          "title": "Form doğru bilgiler ile doldurulunca form submit oluyor",
+          "duration": 55,
+          "failureMessages": [
+            "Unable to find a label with the text of: /I agree to/i\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<header>\u001b[39m\n      \u001b[36m<h1>\u001b[39m\n        \u001b[0mWiStore Products\u001b[0m\n      \u001b[36m</h1>\u001b[39m\n      \u001b[36m<button\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"btn btn-primary\"\u001b[39m\n        \u001b[33mtype\u001b[39m=\u001b[32m\"button\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[0mLogin\u001b[0m\n      \u001b[36m</button>\u001b[39m\n    \u001b[36m</header>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"content-section\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<form\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"mb-3\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<label\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"form-label\"\u001b[39m\n            \u001b[33mfor\u001b[39m=\u001b[32m\"exampleEmail\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[0mEmail\u001b[0m\n          \u001b[36m</label>\u001b[39m\n          \u001b[36m<input\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"form-control\"\u001b[39m\n            \u001b[33mid\u001b[39m=\u001b[32m\"exampleEmail\"\u001b[39m\n            \u001b[33mname\u001b[39m=\u001b[32m\"email\"\u001b[39m\n            \u001b[33mplaceholder\u001b[39m=\u001b[32m\"Enter your email\"\u001b[39m\n            \u001b[33mtype\u001b[39m=\u001b[32m\"email\"\u001b[39m\n            \u001b[33mvalue\u001b[39m=\u001b[32m\"\"\u001b[39m\n          \u001b[36m/>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"mb-3\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<label\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"form-label\"\u001b[39m\n            \u001b[33mfor\u001b[39m=\u001b[32m\"examplePassword\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[0mPassword\u001b[0m\n          \u001b[36m</label>\u001b[39m\n          \u001b[36m<input\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"form-control\"\u001b[39m\n            \u001b[33mid\u001b[39m=\u001b[32m\"examplePassword\"\u001b[39m\n            \u001b[33mname\u001b[39m=\u001b[32m\"password\"\u001b[39m\n            \u001b[33mplaceholder\u001b[39m=\u001b[32m\"Enter your password \"\u001b[39m\n            \u001b[33mtype\u001b[39m=\u001b[32m\"password\"\u001b[39m\n            \u001b[33mvalue\u001b[39m=\u001b[32m\"\"\u001b[39m\n          \u001b[36m/>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"text-center p-4 mb-3\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"btn btn-primary disabled\"\u001b[39m\n            \u001b[33mdisabled\u001b[39m=\u001b[32m\"\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[0mSign In\u001b[0m\n          \u001b[36m</button>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</form>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n    \u001b[36m<footer>\u001b[39m\n      \u001b[36m<p>\u001b[39m\n        \u001b[0mCopyright @ 2023\u001b[0m\n      \u001b[36m</p>\u001b[39m\n    \u001b[36m</footer>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mdata-testid\u001b[39m=\u001b[32m\"location-display\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[0m/\u001b[0m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ],
+          "location": {
+            "line": 37,
+            "column": 19
+          }
+        }
+      ],
+      "startTime": 1722088524000,
+      "endTime": 1722088524741,
+      "status": "failed",
+      "message": "",
+      "name": "/home/projects/vitejs-vite-rtvxvm/src/__tests__/index.test.jsx"
+    }
+  ]
+}
