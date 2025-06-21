@@ -4,25 +4,30 @@ import { useHistory } from 'react-router-dom';
 
 import axios from 'axios';
 
+
 const initialForm = {
   email: '',
   password: '',
   terms: false,
 };
 
+
 export default function Login() {
   const [form, setForm] = useState(initialForm);
 
+
   const history = useHistory();
+
 
   const handleChange = (event) => {
     let { name, value, type, checked } = event.target;
-    value = type == 'checkbox' ? checked : value;
     setForm({ ...form, [name]: value });
   };
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
 
     axios
       .get('https://6540a96145bedb25bfc247b4.mockapi.io/api/login')
@@ -39,6 +44,7 @@ export default function Login() {
       });
   };
 
+
   return (
     <Form onSubmit={handleSubmit}>
       <FormGroup>
@@ -52,6 +58,7 @@ export default function Login() {
           value={form.email}
         />
       </FormGroup>
+
       <FormGroup>
         <Label for="examplePassword">Password</Label>
         <Input
@@ -63,24 +70,26 @@ export default function Login() {
           value={form.password}
         />
       </FormGroup>
+
       {/* reactstrap checkbox ekleyelim*/}
-      <FormGroup check>
+      <FormGroup>
         <Input
-          type="checkbox"
-          name="terms"
           id="terms"
-          checked={form.terms}
+          name="terms"
+          placeholder="I agree to terms of service and privacy policy"
+          type="checkbox"
           onChange={handleChange}
-        />{' '}
-        <Label htmlFor="terms" check>
-          I agree to terms of service and privacy policy{' '}
-        </Label>
+          value={form.password}
+        />
+        <Label htmlFor="terms">I agree to terms of service and privacy policy</Label>
       </FormGroup>
+
+
       <FormGroup className="text-center p-4">
-        <Button color="primary" disabled={!form.terms}>
-          Sign In
-        </Button>
+        <Button color="primary" disabled={!form.terms} >Sign In</Button>
       </FormGroup>
     </Form>
   );
 }
+
+
