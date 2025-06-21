@@ -21,6 +21,7 @@ export default function Login() {
 
   const handleChange = (event) => {
     let { name, value, type, checked } = event.target;
+    value = type === "checkbox" ? checked : value; //kutucuk işaretli ise value=checked yapar.. değilde value aynı kalır.
     setForm({ ...form, [name]: value });
   };
 
@@ -76,10 +77,9 @@ export default function Login() {
         <Input
           id="terms"
           name="terms"
-          placeholder="I agree to terms of service and privacy policy"
           type="checkbox"
           onChange={handleChange}
-          value={form.password}
+          value={form.terms}
         />
         <Label htmlFor="terms">I agree to terms of service and privacy policy</Label>
       </FormGroup>

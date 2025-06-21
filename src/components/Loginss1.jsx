@@ -20,7 +20,8 @@ export default function Login() {
 
 
     const handleChange = (event) => {
-        let { name, value, type } = event.target;
+        let { name, value, type, checked } = event.target;
+        value = type === "checkbox" ? checked : value; //kutucuk işaretli ise value=checked yapar.. değilde value aynı kalır.
         setForm({ ...form, [name]: value });
     };
 
@@ -58,6 +59,7 @@ export default function Login() {
                     value={form.email}
                 />
             </FormGroup>
+
             <FormGroup>
                 <Label for="examplePassword">Password</Label>
                 <Input
@@ -69,11 +71,22 @@ export default function Login() {
                     value={form.password}
                 />
             </FormGroup>
+
             {/* reactstrap checkbox ekleyelim*/}
+            <FormGroup>
+                <Input
+                    id="terms"
+                    name="terms"
+                    type="checkbox"
+                    onChange={handleChange}
+                    value={form.terms}
+                />
+                <Label htmlFor="terms">I agree to terms of service and privacy policy</Label>
+            </FormGroup>
 
 
             <FormGroup className="text-center p-4">
-                <Button color="primary">Sign In</Button>
+                <Button color="primary" disabled={!form.terms} >Sign In</Button>
             </FormGroup>
         </Form>
     );
