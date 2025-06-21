@@ -23,7 +23,7 @@ const errorMessages = {
 export default function Login() {
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({}); //boş array tanımladım.
-  const [isValid, setIsValid] = useState(False);
+  const [isValid, setIsValid] = useState(false);
 
   const history = useHistory();
 
@@ -43,6 +43,23 @@ export default function Login() {
   const validateForm = () => {
     const newErrors = {};
 
+    const validateEmail = (email) => {
+      return String(email)
+        .toLowerCase()
+        .match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+    }
+
+    if (form.password.length < 4) {
+      newErrors.password = errorMessages.password;
+    }
+
+    if (!form.terms) {
+      newErrors.terms = errorMessages.terms;
+    }
+
+    if (!validateEmail(form.email)) {
+      newErrors.email = errorMessages.email;
+    }
 
     setErrors(newErrors)
     setIsValid(Object.keys(newErrors).length === 0) // hiç hata olmadığı durumu niteler!!!
@@ -50,7 +67,7 @@ export default function Login() {
 
 
   const handleChange = (event) => {
-    let { name, value, type, checked } = event.target;
+    let { name, value, type } = event.target;
     value = type === 'checkbox' ? event.target.checked : value;
     setForm({ ...form, [name]: value }); // **kod01**
   };
@@ -59,20 +76,26 @@ export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    //şimdi handleSubmit için isValid kontrolünü yazıyoruz. --> if ile;
 
-    axios
-      .get('https://6540a96145bedb25bfc247b4.mockapi.io/api/login')
-      .then((res) => {
-        const user = res.data.find(
-          (item) => item.password == form.password && item.email == form.email
-        );
-        if (user) {
-          setForm(initialForm);
-          history.push('/main');
-        } else {
-          history.push('/error');
-        }
-      });
+    if (isValid) {
+      axios
+        .get('https://6540a96145bedb25bfc247b4.mockapi.io/api/login')
+        .then((res) => {
+          const user = res.data.find(
+            (item) => item.password == form.password && item.email == form.email
+          );
+          if (user) {
+            setForm(initialForm);
+            history.push('/main');
+          } else {
+            history.push('/error');
+          }
+        });
+    } else {
+      validateForm();
+    }
+
   };
 
 
@@ -88,6 +111,7 @@ export default function Login() {
           type="email"
           onChange={handleChange}
           value={form.email}
+          invalid={!!errors.email}
         />
         {errors.email && <FormFeedback>{errors.email}</FormFeedback>} {/*hata mesajı varsa hatayı göstermesi için!!*/}
       </FormGroup>
@@ -101,6 +125,7 @@ export default function Login() {
           type="password"
           onChange={handleChange}
           value={form.password}
+          invalid={!!errors.password}
         />
         {errors.password && <FormFeedback>{errors.password}</FormFeedback>} {/*hata mesajı varsa hatayı göstermesi için!!*/}
       </FormGroup>
@@ -112,15 +137,16 @@ export default function Login() {
           checked={form.terms}
           type="checkbox"
           onChange={handleChange}
+          invalid={!!errors.terms}
         />{' '}
         <Label htmlFor="terms" check>
           I agree to terms of service and privacy policy
         </Label>
-        {errors.terms && <FormFeedback>{errors.terms}</FormFeedback>} {/*hata mesajı varsa hatayı göstermesi için!!*/}
+        {errors.terms && <FormFeedback>{errors.terms}</FormFeedback>}  {/*hata mesajı varsa hatayı göstermesi için!!*/}
       </FormGroup>
 
       <FormGroup className="text-center p-4">
-        <Button color="primary">Sign In</Button>
+        <Button disabled={!isValid} color="primary">Sign In</Button>
       </FormGroup>
 
     </Form>
