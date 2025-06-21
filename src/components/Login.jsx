@@ -1,8 +1,7 @@
 
-import React, { useState } from 'react';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import React, { useEffect, useState } from 'react';
+import { Form, FormGroup, Label, Input, Button, FormFeedback } from 'reactstrap';
 import { useHistory } from 'react-router-dom';
-
 
 import axios from 'axios';
 
@@ -17,20 +16,43 @@ const initialForm = {
 const errorMessages = {
   email: 'Please enter a valid email address',
   password: 'Password must be at least 4 characters long',
+  terms: "You must agree to the terms and services",
 };
 
 
 export default function Login() {
   const [form, setForm] = useState(initialForm);
-
+  const [errors, setErrors] = useState({}); //boş array tanımladım.
+  const [isValid, setIsValid] = useState(False);
 
   const history = useHistory();
 
 
+  //Şimdi bir genel akışı kısaca anlatalım;
+  //1. Ekrandan email alanına girilen ilk değeri yakalayan kısım: handleChange
+  //2. handleChange bu değişimi "form" tanımı içine yansıtıyor. Tam olarak burada **kod01**
+  //3. "form" içindeki değişikleri takip eden bir kısım da: useEffect
+  //4. useEffect form değiştiğinde "validateForm" fonksiyonunu çalıştırıyor.
+  //5. validateForm fonksiyonu içinde yazan koşullar kontrol ediliyor.
+
+
+  useEffect(() => {
+    validateForm(); // [form] değiştiği anda validateForm fonksiyonu çalışır.
+  }, [form]); //nasıl çalışır? : [form] değiştiği anda, yani ekrandan form alanlarına bir değer girildiği anda...
+
+  const validateForm = () => {
+    const newErrors = {};
+
+
+    setErrors(newErrors)
+    setIsValid(Object.keys(newErrors).length === 0) // hiç hata olmadığı durumu niteler!!!
+  };
+
+
   const handleChange = (event) => {
-    let { name, value, type } = event.target;
+    let { name, value, type, checked } = event.target;
     value = type === 'checkbox' ? event.target.checked : value;
-    setForm({ ...form, [name]: value });
+    setForm({ ...form, [name]: value }); // **kod01**
   };
 
 
@@ -56,6 +78,7 @@ export default function Login() {
 
   return (
     <Form onSubmit={handleSubmit}>
+
       <FormGroup>
         <Label for="exampleEmail">Email</Label>
         <Input
@@ -66,7 +89,9 @@ export default function Login() {
           onChange={handleChange}
           value={form.email}
         />
+        {errors.email && <FormFeedback>{errors.email}</FormFeedback>} {/*hata mesajı varsa hatayı göstermesi için!!*/}
       </FormGroup>
+
       <FormGroup>
         <Label for="examplePassword">Password</Label>
         <Input
@@ -77,7 +102,9 @@ export default function Login() {
           onChange={handleChange}
           value={form.password}
         />
+        {errors.password && <FormFeedback>{errors.password}</FormFeedback>} {/*hata mesajı varsa hatayı göstermesi için!!*/}
       </FormGroup>
+
       <FormGroup check>
         <Input
           id="terms"
@@ -89,10 +116,13 @@ export default function Login() {
         <Label htmlFor="terms" check>
           I agree to terms of service and privacy policy
         </Label>
+        {errors.terms && <FormFeedback>{errors.terms}</FormFeedback>} {/*hata mesajı varsa hatayı göstermesi için!!*/}
       </FormGroup>
+
       <FormGroup className="text-center p-4">
         <Button color="primary">Sign In</Button>
       </FormGroup>
+
     </Form>
   );
 }
