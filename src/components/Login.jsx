@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+
+import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { useHistory } from 'react-router-dom';
+
 
 import axios from 'axios';
 
@@ -12,6 +14,12 @@ const initialForm = {
 };
 
 
+const errorMessages = {
+  email: 'Please enter a valid email address',
+  password: 'Password must be at least 4 characters long',
+};
+
+
 export default function Login() {
   const [form, setForm] = useState(initialForm);
 
@@ -20,8 +28,8 @@ export default function Login() {
 
 
   const handleChange = (event) => {
-    let { name, value, type, checked } = event.target;
-    value = type === "checkbox" ? checked : value; //kutucuk işaretli ise value=checked yapar.. değilde value aynı kalır.
+    let { name, value, type } = event.target;
+    value = type === 'checkbox' ? event.target.checked : value;
     setForm({ ...form, [name]: value });
   };
 
@@ -59,7 +67,6 @@ export default function Login() {
           value={form.email}
         />
       </FormGroup>
-
       <FormGroup>
         <Label for="examplePassword">Password</Label>
         <Input
@@ -71,25 +78,22 @@ export default function Login() {
           value={form.password}
         />
       </FormGroup>
-
-      {/* reactstrap checkbox ekleyelim*/}
-      <FormGroup>
+      <FormGroup check>
         <Input
           id="terms"
           name="terms"
+          checked={form.terms}
           type="checkbox"
           onChange={handleChange}
-          value={form.terms}
-        />
-        <Label htmlFor="terms">I agree to terms of service and privacy policy</Label>
+        />{' '}
+        <Label htmlFor="terms" check>
+          I agree to terms of service and privacy policy
+        </Label>
       </FormGroup>
-
-
       <FormGroup className="text-center p-4">
-        <Button color="primary" disabled={!form.terms} >Sign In</Button>
+        <Button color="primary">Sign In</Button>
       </FormGroup>
     </Form>
   );
 }
-
 
